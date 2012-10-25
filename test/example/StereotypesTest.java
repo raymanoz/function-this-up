@@ -9,17 +9,17 @@ import static org.hamcrest.Matchers.is;
 
 public class StereotypesTest {
     @Test
-    public void valueForNameShouldReturnValidPortalWhenPassedDescription() {
+    public void valueForNameShouldReturnValidStereotypeWhenPassedDescription() {
         assertThat(find("a person from new zealand"), is(newzealand));
     }
 
     @Test
-    public void valueForNameShouldReturnValidPortalWhenPassedEnumValueItself() {
+    public void valueForNameShouldReturnValidStereotypeWhenPassedEnumValueItself() {
         assertThat(find("manchester"), is(manchester));
     }
 
     @Test
-    public void valueForNameShouldReturnValidPortalWhenPassedAlternativeName() {
+    public void valueForNameShouldReturnValidStereotypeWhenPassedAlternativeName() {
         assertThat(find("thief"), is(liverpool));
     }
 
