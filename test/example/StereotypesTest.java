@@ -37,7 +37,7 @@ public class StereotypesTest {
             fail("Did not throw IllegalArgumentException");
         } catch (IllegalArgumentException e) {
             assertThat(e.getMessage(), is(
-                    "Invalid Portal [Awesome]. Must be one of [a person from australia, a person from liverpool, " +
+                    "Invalid Stereotype [Awesome]. Must be one of [a person from australia, a person from liverpool, " +
                             "a person from manchester, a person from new zealand, a person from preston, aussie, " +
                             "australia, fighter, kiwi, legend, liverpool, manc, manchester, mancunian, newzealand, " +
                             "preston, scally, scouser, thief]"));

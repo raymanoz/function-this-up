@@ -21,7 +21,7 @@ public enum ImperativeStereotype {
     }
 
     public static ImperativeStereotype find(String name) throws IllegalArgumentException {
-        List<String> validStereotypes = new ArrayList<String>();
+        List<String> validStereotypes = new ArrayList<>();
         try {
             return ImperativeStereotype.valueOf(name);
         } catch (IllegalArgumentException e) {
@@ -37,16 +37,16 @@ public enum ImperativeStereotype {
                 }
             }
             Collections.sort(validStereotypes);
-            throw new IllegalArgumentException(("Invalid Portal [" + name + "]. Must be one of [" + join(validStereotypes) + "]"));
+            throw new IllegalArgumentException(("Invalid Stereotype [" + name + "]. Must be one of [" + join(validStereotypes, ", ") + "]"));
         }
     }
 
-    private static String join(List<String> stereotypes) {
+    private static String join(List<String> stereotypes, String separator) {
         final StringBuilder result = new StringBuilder();
         for (String stereotype : stereotypes) {
             result.append(stereotype);
             if((stereotypes.size() > 1) && (!stereotype.equals(stereotypes.get(stereotypes.size()-1)))) {
-                result.append(", ");
+                result.append(separator);
             }
         }
         return result.toString();
