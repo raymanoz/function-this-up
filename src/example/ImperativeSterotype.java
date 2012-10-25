@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-public enum ImperativeSterotypes {
+public enum ImperativeSterotype {
     australia("a person from australia", "aussie", "legend"),
     newzealand("a person from new zealand", "kiwi"),
     preston("a person from preston", "scally"),
@@ -15,17 +15,18 @@ public enum ImperativeSterotypes {
     private String description;
     private List<String> aliases;
 
-    ImperativeSterotypes(String description, String... aliases) {
+    ImperativeSterotype(String description, String... aliases) {
         this.aliases = Arrays.asList(aliases);
         this.description = description;
     }
 
-    public static ImperativeSterotypes find(String name) throws IllegalArgumentException {
+    public static ImperativeSterotype find(String name) throws IllegalArgumentException {
         List<String> validStereotypes = new ArrayList<String>();
         try {
-            return ImperativeSterotypes.valueOf(name);
+            return ImperativeSterotype.valueOf(name);
         } catch (IllegalArgumentException e) {
-            for (ImperativeSterotypes sterotype : ImperativeSterotypes.values()) {
+            for (ImperativeSterotype sterotype : ImperativeSterotype.values()) {
+                validStereotypes.add(sterotype.name());
                 validStereotypes.add(sterotype.description);
                 if(sterotype.description.equals(name)){
                     return sterotype;
