@@ -2,7 +2,7 @@ package example;
 
 import org.junit.Test;
 
-import static example.ImperativeStereotype.*;
+import static example.FunctionalStereotype.*;
 import static junit.framework.Assert.fail;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;

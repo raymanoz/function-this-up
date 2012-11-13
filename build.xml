@@ -4,8 +4,8 @@
     <property name="build" value="${basedir}/build"/>
     <property name="artifacts" value="${build}/artifacts"/>
     <property name="reports" value="${artifacts}/reports"/>
-    <property name="src" value="${basedir}/src"/>
-    <property name="test" value="${basedir}/test"/>
+    <property name="src" value="/"/>
+    <property name="test" value="/"/>
     <property name="release.version" value="${build.number}"/>
     <property name="release.name" value="${ant.project.name}-${release.version}"/>
     <property name="release.jar" value="${release.name}.jar"/>
@@ -64,9 +64,9 @@
     <target name="package">
         <mkdir dir="${artifacts}"/>
 
-        <zip destfile="${artifacts}/${release.src}" basedir="src"/>
+        <zip destfile="${artifacts}/${release.src}" basedir="java/src"/>
 
-        <zip destfile="${artifacts}/${tests.src}" basedir="test"/>
+        <zip destfile="${artifacts}/${tests.src}" basedir="java/test"/>
 
         <exec executable="hg" output="${artifacts}/hg.properties">
             <arg line="log -l 1"/>
